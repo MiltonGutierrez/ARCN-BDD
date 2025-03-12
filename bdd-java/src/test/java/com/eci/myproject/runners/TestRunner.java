@@ -6,7 +6,7 @@ import io.cucumber.junit.CucumberOptions;
 
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src/test/java/features", glue="steps",
+@CucumberOptions(features = "src/test/java/com/eci/myproject/features", glue="steps",
 monochrome = true,
 publish = true,
 plugin = {"pretty", "junit:target/JUnitReports/report.xml",
