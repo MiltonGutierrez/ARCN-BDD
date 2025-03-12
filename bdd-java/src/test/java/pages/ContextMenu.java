@@ -2,7 +2,9 @@ package pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.FindBy;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.PageFactory;
 
 public class ContextMenu{
     
@@ -12,12 +14,13 @@ public class ContextMenu{
     WebElement hotSpot;
 
     public ContextMenu(WebDriver driver){
-        webDriver = driver;
+        this.webDriver = driver;
+        PageFactory.initElements(driver, this);
     }
 
     public void rightClick(){
-        hotSpot.contextClick();
+        Actions actions = new Actions(webDriver);
+        actions.contextClick(hotSpot).perform();
     }
-
 
 }
